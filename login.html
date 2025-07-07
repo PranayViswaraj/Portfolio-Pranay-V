@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pranay V - Portfolio | Login</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: url('https://www.transparenttextures.com/patterns/dark-mosaic.png'), #0e0e0e;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 40px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      text-align: center;
+    }
+
+    .login-container h1 {
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #ccc;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 30px;
+      background-color: #fff;
+      color: #000;
+      font-size: 14px;
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .remember input {
+      margin-right: 10px;
+    }
+
+    .forgot-password {
+      text-align: right;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .forgot-password a {
+      color: #ff6f61;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      background-color: #ff6f61;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background-color: #ff4f40;
+    }
+
+    @media (max-width: 500px) {
+      .login-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Pranay V - Portfolio</h1>
+    <form onsubmit="return validateLogin(event)">
+      <div class="form-group">
+        <label for="userid">User ID</label>
+        <input type="text" id="userid" name="userid" placeholder="Enter your User ID" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+      </div>
+      <div class="remember">
+        <input type="checkbox" id="remember">
+        <label for="remember">Remember me</label>
+      </div>
+      <div class="forgot-password">
+        <a onclick="handleForgotPassword()">Forgot Password?</a>
+      </div>
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+  </div>
+
+  <script>
+    function validateLogin(event) {
+      event.preventDefault();
+      const validUser = "25112005";
+      const validPass = "yuthikapranay";
+
+      const userInput = document.getElementById("userid").value;
+      const passInput = document.getElementById("password").value;
+
+      if (userInput === validUser && passInput === validPass) {
+        window.location.href = "file:///C:/Users/vpran/OneDrive/Desktop/PortFolio/home_page.html";
+      } else {
+        alert("Invalid login credentials");
+      }
+    }
+
+    function handleForgotPassword() {
+      const answer = prompt("What's your secret code?");
+      if (answer === "vkpy") {
+        window.location.href = "file:///C:/Users/vpran/OneDrive/Desktop/PortFolio/home_page.html";
+      } else {
+        alert("Cannot process further");
+      }
+    }
+  </script>
+
+
+
+</body>
+</html>
