@@ -145,7 +145,8 @@
       const passInput = document.getElementById("password").value;
 
       if (userInput === validUser && passInput === validPass) {
-        window.location.href = "file:///C:/Users/vpran/OneDrive/Desktop/PortFolio/home_page.html";
+        window.location.href = "home_page.html";
+
       } else {
         alert("Invalid login credentials");
       }
@@ -154,7 +155,8 @@
     function handleForgotPassword() {
       const answer = prompt("What's your secret code?");
       if (answer === "vkpy") {
-        window.location.href = "file:///C:/Users/vpran/OneDrive/Desktop/PortFolio/home_page.html";
+        window.location.href = "home_page.html";
+
       } else {
         alert("Cannot process further");
       }
